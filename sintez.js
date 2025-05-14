@@ -9,32 +9,15 @@ export { encodeWAV, generatePCM, tokenize };
 //   n: Sample number (integer), from 0 to R × duration − 1
 
 function generatePCM(frequency, duration) {
-<<<<<<< HEAD
-    duration = duration/1000;
-    const Amplitude = 32767;
-    const R = 44100;
-    const sample = [];
-    for (let i = 0; i < R * duration - 1; i++) {
+  duration = duration / 1000;
+  const Amplitude = 32767;
+  const R = 44100;
+  const sample = [];
+  for (let i = 0; i < R * duration - 1; i++) {
     sample[i] = Amplitude * Math.sin(2 * Math.PI * frequency * (i / R));
-    }
-    return sample;
-    } 
-=======
-  const amplitude = 32767;
-  const sampleRate = 44100;
-
-  const numSamples = Math.floor(sampleRate * (duration / 1000));
-
-  const samples = [];
-  for (let i = 0; i < numSamples; i++) {
-    const t = i / sampleRate;
-    const sample = amplitude * Math.sin(2 * Math.PI * frequency * t);
-    samples.push(sample);
   }
-
-  return samples;
+  return sample;
 }
->>>>>>> 90d7081 (:speech_baloon: a better language for instructions)
 
 async function encodeWAV(
   samples,

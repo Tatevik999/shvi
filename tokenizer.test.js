@@ -40,8 +40,9 @@ Deno.test("Tokenizer", async (t) => {
     name: "tokenize Shvi code",
     fn: () => {
       const result = tokenize("tone 261.63 1000");
+      assertEquals(result, [atom("tone"), 261.63, 1000]);
 
-      fail("Write down the correct assertion and make it pass");
+      // fail("Write down the correct assertion and make it pass");
     },
   });
 });
